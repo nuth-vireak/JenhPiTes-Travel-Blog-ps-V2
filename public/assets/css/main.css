@@ -720,11 +720,11 @@ input {
     top: 50%;
 }
 
-img {
+.image {
     transition: all 0.3s ease-in-out;
 }
 
-img:hover {
+.image:hover {
     transform: scale(1.4);
     position: relative;
 }
