@@ -44,12 +44,12 @@
             <div class="group flex flex-col items-center justify-center">
                 <div
                     class="jomnot-fix-safari-radius relative h-[150px] w-full flex-shrink-0 cursor-pointer overflow-hidden rounded-[16px] shadow-base duration-700">
-                    <a href="/km/destinations/siem-reap">
+                    <a href="">
                         <div class="absolute h-full w-full rounded-[16px]">
                             <span
                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                 <img
-                                    alt="សៀមរាប"
+                                    alt=""
                                     src="https://jomnot.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2FjGl7otiKn8qlUhSSX-Fxow%2F2ea6bb4f-b2f3-47ad-4d6f-6beeea58a500%2Fpublic&w=3840&q=80"
                                     class="h-full w-full rounded-[16px] object-cover transition-all duration-700 ease-in-out group-hover:scale-125"
                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
@@ -73,8 +73,8 @@
                                 <span
                                     style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                     <img
-                                        alt="បាត់ដំបង"
-                                        src="https://jomnot.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2FjGl7otiKn8qlUhSSX-Fxow%2Fdfbde414-2886-40d1-f875-dd8a24a50c00%2Fpublic&w=3840&q=80"
+                                        alt=""
+                                        src="{{ asset('uploads/category/'.$category->image) }}"
                                         class="image h-full w-full rounded-[16px] object-cover transition-all duration-700 ease-in-out group-hover:scale-125"
                                         style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
                                         sizes="100vw">
@@ -94,7 +94,7 @@
 
         {{-- ============================= 2nd Section ======================================= --}}
         <div class="p-[10px]">
-            <a href="/km/search?searchValue=&amp;page=1&amp;limit=10&amp;model=Article&amp;location=phnom_penh&amp;locale=km">
+            <a href="">
                 <div class="flex items-center">
                     <svg class="mr-[10px]" viewBox="0 0 950 1024"
                          style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 30px; height: 30px;">
@@ -121,7 +121,10 @@
                                 <div></div>
                             </div>
                             <span class="text-xs font-semibold text-primary">
-                                <a href="/article" class="text-xs font-semibold text-primary"> មើលទាំងអស់</a>
+                                @php $category = \App\Models\Category::where('id', 1)->first(); @endphp
+                                <a href="{{ url('category/'.$category->slug) }}"
+                                   class="text-xs font-semibold text-primary"> មើលទាំងអស់
+                                </a>
                             </span>
                         </div>
                     </div>
@@ -190,113 +193,205 @@
         <div class="h-[12px] w-full"></div>
 
 
-        <div class="row">
-            <div class="col-12">
-                <div class="owl-carousel owl-theme">
-                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 21)->get(); @endphp
+        {{-- ============================= 3rd Section ======================================= --}}
+        <div class="p-[10px]">
+            <a href="">
+                <div class="flex items-center">
+                    <svg class="mr-[10px]" viewBox="0 0 950 1024"
+                         style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 30px; height: 30px;">
+                        <path
+                            d="M318.159 288.364l54.454-220.896c8.562-34.59 53.084-44.522 75.344-16.439l142.127 177.744c8.904 10.959 22.603 17.124 36.645 16.096l227.061-16.439c35.617-2.74 58.563 36.645 39.042 66.44l-125.003 190.074c-7.877 11.987-9.247 26.713-3.767 39.727l85.961 210.965c13.357 32.878-16.781 67.125-51.371 57.878l-219.526-60.276c-13.699-3.767-28.425-0.685-39.042 8.562l-173.977 146.922c-27.398 22.946-69.18 4.795-70.892-30.823l-10.617-227.403c-0.685-14.041-8.219-27.056-20.206-34.59l-193.498-120.209c-30.138-18.836-26.028-64.385 7.534-76.714l213.019-80.482c13.357-5.137 23.288-16.096 26.713-30.138z"
+                            fill="#3b71ca">
+                        </path>
+                        <path
+                            d="M950.025 947.628c0-1.37 0.342-2.74 0-3.767 0 0 0-0.342 0-0.342 0-0.685-0.685-1.027-0.685-1.712-0.342-1.027-0.685-2.397-1.37-3.082-11.302-23.288-63.358-27.056-82.879-30.138-66.098-9.932-133.223-13.357-200.005-15.411-148.634-5.137-304.46-7.877-451.724 16.781-31.85 5.48-89.728 12.329-107.537 44.522-18.151 33.563 38.7 43.152 59.933 47.262 142.812 27.398 295.898 23.631 440.423 19.864 76.372-2.055 153.771-4.795 229.116-16.781 28.768-4.795 95.551-12.672 111.304-45.892 1.37-2.397 2.74-4.795 3.082-7.534 0 0 0-0.342 0.342-0.342 0 0 0 0 0 0 0-1.37 0-2.397 0-3.425z"
+                            fill="rgb(40, 56, 75)">
+                        </path>
+                        <path
+                            d="M857.557 425.354c27.056-41.439 59.248-82.194 82.879-126.031 19.179-35.96 8.219-76.714-28.083-96.235-23.631-12.672-50.001-10.274-75.687-8.219-60.618 4.452-121.236 8.904-181.854 13.357-4.11 0.342-14.384 2.74-19.864 2.055 1.712-1.712-5.822-11.987-4.795-10.274-17.124-25.001-38.7-48.289-57.536-71.92-32.535-40.755-72.947-116.441-128.771-126.373-47.262-8.562-101.030 15.069-118.496 60.961-7.534 19.521-10.959 41.439-15.754 61.645-13.699 55.823-27.398 111.304-41.097 167.128-0.685 0-1.712 0-4.11 1.712-7.192 4.795-18.151 6.849-26.028 9.932-31.508 11.644-62.673 23.288-94.181 35.275-45.207 17.124-115.414 30.823-137.332 79.454-27.74 61.645 35.96 91.783 78.084 118.154 27.398 17.124 54.796 34.247 82.536 51.029 17.809 10.959 42.124 21.233 57.193 35.617 11.987 11.302 10.274 19.179 10.959 34.247 1.37 31.85 3.082 63.358 4.452 95.208 2.055 41.439-8.219 118.839 20.548 153.429 48.974 59.248 123.633 15.754 168.84-21.918 23.973-20.206 47.946-40.412 71.92-60.618 19.521-16.439 47.604-33.22 63.358-53.426 26.028 10.274 56.166 15.069 83.221 22.603 47.946 13.014 106.167 39.385 157.196 37.33 42.467-1.712 92.126-30.823 97.948-76.714 2.74-22.261-8.219-42.467-16.439-62.33-22.603-55.481-46.919-110.962-68.153-167.128-5.48-14.384-8.562-21.576-1.712-36.987 9.932-20.891 28.083-41.439 40.755-60.961zM346.585 860.982c5.48-4.795 2.055 3.425 0 0v0zM776.391 395.559c-20.548 31.165-60.961 73.975-65.413 113.359-4.452 39.042 27.74 89.043 41.782 123.291 10.959 26.371 21.576 53.084 32.535 79.454 2.055 5.137 7.877 28.425 13.014 41.439-1.027-0.342-2.397-0.342-3.425-0.685-29.795-8.219-59.248-16.096-89.043-24.316-41.097-11.302-89.043-32.193-132.195-30.823-52.741 1.712-90.413 44.179-128.086 75.687-21.576 18.151-43.494 36.645-65.070 54.796-3.082 2.74-22.603 15.754-34.932 26.371 0-0.342 0-0.685 0-1.027 0.342-5.822-0.685-11.644-0.685-17.124-1.027-25.001-2.397-50.344-3.425-75.344-2.055-44.522-2.74-89.728-6.165-134.25-4.452-56.166-65.413-79.112-107.537-105.14-27.74-17.124-55.481-34.59-83.564-51.714-11.644-7.192-36.645-17.124-41.439-31.165-6.165-17.466 14.041-17.466 29.795-23.288 30.138-11.302 60.276-22.603 90.071-33.905 48.974-18.494 122.606-32.535 143.155-86.989 0.685-1.712 0.685-3.082 1.37-4.795 0.685-1.37 1.37-2.74 1.712-4.452 10.617-43.494 21.576-86.989 32.193-130.483 5.137-20.206 9.932-40.412 15.069-60.618 9.247 10.617 21.233 22.261 25.343 27.398 18.494 23.288 37.33 46.577 55.823 69.522 31.165 39.042 57.193 86.646 112.674 89.386 42.467 1.37 86.989-6.165 129.798-9.247 14.726-1.027 29.11-2.055 43.837-3.082l43.152-4.11c0 0 0.342 0 0.342 0h1.712c8.219-0.685 40.070-1.027 14.726 33.22 0 0 0 0 0 0l-6.165 7.877c0 0 0 0 0 0-3.767 5.137-7.877 10.274-10.274 13.699-16.781 25.686-33.563 51.371-50.686 77.057z"
+                            fill="rgb(40, 56, 75)">
+                        </path>
+                    </svg>
+                    <div class="w-full">
+                        <div class="flex items-center justify-between">
+                            <div class="flex">
+                                <div class="flex">
+                                    <h3 class="text-xl font-semibold" style="margin-left: 10px;">ចំណត</h3>
+                                    <h3 class="pl-[5px] text-xl font-bold text-primary">កំពត</h3>
+                                </div>
+                                <div></div>
+                            </div>
+                            <span class="text-xs font-semibold text-primary">
+                                @php $category = \App\Models\Category::where('id', 2)->first(); @endphp
+                                <a href="{{ url('category/'.$category->slug) }}"
+                                   class="text-xs font-semibold text-primary"> មើលទាំងអស់
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {{-- ============================== Post Items  ===================================== --}}
+        <div class="relative w-full">
+            <div class="w-full overflow-auto" style="overflow: auto;">
+                <div class="relative flex h-auto w-full select-none py-[20px]"
+                     style="transform: translate3d(0px, 0px, 0px);">
+
+                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 2)->get(); @endphp
                     @if(count($posts) > 0)
                         @foreach($posts as $post)
-                            <a href="{{ url('category/'.$post->category->slug.'/'.$post->slug) }}">
-                                <div class="card" style="height: 300px; overflow: hidden;">
-                                    <img src="{{ asset('uploads/post/'.$post->yt_iframe) }}" class="card-img-top"
-                                         alt="..."
-                                         height="200px">
-                                    <div class="card-body px-3">
-                                        <div class="text-muted mb-2">
-                                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                                            <span>{{ $post->category->name }}</span>
+                            <div
+                                class="h-full w-[296px] flex-shrink-0 cursor-pointer px-[5px] sm:w-[296px] md:w-[244px] lg:w-[244px] xl:w-[244px] 2xl:w-[296px]">
+                                <div class="relative z-20 h-[250px] w-full overflow-hidden rounded-[16px]">
+                                    <a href="{{ url('category/'.$post->category->slug.'/'.$post->slug) }}">
+                                        <div
+                                            class="aspect-w-1 aspect-h-1 absolute h-full w-full transform bg-cover bg-center transition-all duration-700 ease-in-out hover:scale-125">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                                <img
+                                                    src="{{ asset('uploads/post/'.$post->yt_iframe) }}"
+                                                    class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                                            </span>
                                         </div>
-                                        <h5 class="card-text text-truncate">{{ $post->name }}</h5>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
+                                <div class="my-[8px] flex flex-col">
+                                    <span
+                                        class="flex items-center text-[14px] text-gray-400">
+                                        <svg class="h-[16px] w-[16px] stroke-gray-400" viewBox="0 0 819 1024"
+                                             style="display: inline-block; stroke: currentcolor; fill: currentcolor;">
+                                            <path
+                                                d="M409.625 204.775c-112.947 0-204.8 91.853-204.8 204.8s91.853 204.799 204.8 204.799c112.948 0 204.801-91.853 204.801-204.799s-91.853-204.8-204.801-204.8zM409.625 511.975c-56.474 0-102.4-45.926-102.4-102.4s45.926-102.4 102.4-102.4c56.474 0 102.401 45.926 102.401 102.4s-45.927 102.4-102.401 102.4zM409.42-0.025c-233.421 0-409.395 176.077-409.395 409.6 0 323.891 246.374 525.311 352.307 596.838 17.306 11.725 37.223 17.613 57.089 17.613 19.814 0 39.629-5.842 56.934-17.516 106.087-71.629 352.82-273.147 352.82-596.935 0.051-233.523-176.128-409.6-409.754-409.6zM409.677 921.574c-92.365-62.413-307.252-237.21-307.252-511.999 0-178.022 129.075-307.2 306.995-307.2 175.258 0 307.405 132.045 307.405 307.2 0 274.636-215.194 449.587-307.149 511.999z">
+                                            </path>
+                                        </svg>&nbsp;{{ $post->category->name }}
+                                    </span>
+                                    <a href="{{ url('category/'.$post->category->slug.'/'.$post->slug) }}">
+                                        <span
+                                            class="text-[18px] font-semibold line-clamp-2">{{ $post->name }}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
                         @endforeach
                     @endif
                 </div>
             </div>
+            {{-- ========================= End of Post Item============================ --}}
+            <button
+                class="shadow-lg hover:shadow-xl flex absolute top-1/2 right-2.5 z-10 ml-4 h-8 w-8  -translate-y-1/2 scale-100 cursor-pointer touch-manipulation items-center justify-center rounded-full border-0 bg-white fill-gray-900 p-2 outline-0 transition-transform hover:scale-110 hover:fill-yellow-500 disabled:hidden">
+                <svg class="h-full w-full" viewBox="0 0 238.003 238.003">
+                    <path
+                        d="M181.776 107.719L78.705 4.648c-6.198-6.198-16.273-6.198-22.47 0s-6.198 16.273 0 22.47l91.883 91.883-91.883 91.883c-6.198 6.198-6.198 16.273 0 22.47s16.273 6.198 22.47 0l103.071-103.039a15.741 15.741 0 0 0 4.64-11.283c0-4.13-1.526-8.199-4.64-11.313z">
+                    </path>
+                </svg>
+            </button>
         </div>
 
-        <h5 class="mb-3 mt-5">
-            <i class="fas fa-star fa-fw fa-lg text-danger me-1"></i> Explore in <span class="text-danger fw-bold">Siem Reap</span>
-        </h5>
+        {{-- saperate div --}}
+        <div class="h-[12px] w-full"></div>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="owl-carousel owl-theme">
-                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 17)->get(); @endphp
+
+        {{-- ============================= 4th Section ======================================= --}}
+        <div class="p-[10px]">
+            <a href="">
+                <div class="flex items-center">
+                    <svg class="mr-[10px]" viewBox="0 0 950 1024"
+                         style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 30px; height: 30px;">
+                        <path
+                            d="M318.159 288.364l54.454-220.896c8.562-34.59 53.084-44.522 75.344-16.439l142.127 177.744c8.904 10.959 22.603 17.124 36.645 16.096l227.061-16.439c35.617-2.74 58.563 36.645 39.042 66.44l-125.003 190.074c-7.877 11.987-9.247 26.713-3.767 39.727l85.961 210.965c13.357 32.878-16.781 67.125-51.371 57.878l-219.526-60.276c-13.699-3.767-28.425-0.685-39.042 8.562l-173.977 146.922c-27.398 22.946-69.18 4.795-70.892-30.823l-10.617-227.403c-0.685-14.041-8.219-27.056-20.206-34.59l-193.498-120.209c-30.138-18.836-26.028-64.385 7.534-76.714l213.019-80.482c13.357-5.137 23.288-16.096 26.713-30.138z"
+                            fill="#3b71ca">
+                        </path>
+                        <path
+                            d="M950.025 947.628c0-1.37 0.342-2.74 0-3.767 0 0 0-0.342 0-0.342 0-0.685-0.685-1.027-0.685-1.712-0.342-1.027-0.685-2.397-1.37-3.082-11.302-23.288-63.358-27.056-82.879-30.138-66.098-9.932-133.223-13.357-200.005-15.411-148.634-5.137-304.46-7.877-451.724 16.781-31.85 5.48-89.728 12.329-107.537 44.522-18.151 33.563 38.7 43.152 59.933 47.262 142.812 27.398 295.898 23.631 440.423 19.864 76.372-2.055 153.771-4.795 229.116-16.781 28.768-4.795 95.551-12.672 111.304-45.892 1.37-2.397 2.74-4.795 3.082-7.534 0 0 0-0.342 0.342-0.342 0 0 0 0 0 0 0-1.37 0-2.397 0-3.425z"
+                            fill="rgb(40, 56, 75)">
+                        </path>
+                        <path
+                            d="M857.557 425.354c27.056-41.439 59.248-82.194 82.879-126.031 19.179-35.96 8.219-76.714-28.083-96.235-23.631-12.672-50.001-10.274-75.687-8.219-60.618 4.452-121.236 8.904-181.854 13.357-4.11 0.342-14.384 2.74-19.864 2.055 1.712-1.712-5.822-11.987-4.795-10.274-17.124-25.001-38.7-48.289-57.536-71.92-32.535-40.755-72.947-116.441-128.771-126.373-47.262-8.562-101.030 15.069-118.496 60.961-7.534 19.521-10.959 41.439-15.754 61.645-13.699 55.823-27.398 111.304-41.097 167.128-0.685 0-1.712 0-4.11 1.712-7.192 4.795-18.151 6.849-26.028 9.932-31.508 11.644-62.673 23.288-94.181 35.275-45.207 17.124-115.414 30.823-137.332 79.454-27.74 61.645 35.96 91.783 78.084 118.154 27.398 17.124 54.796 34.247 82.536 51.029 17.809 10.959 42.124 21.233 57.193 35.617 11.987 11.302 10.274 19.179 10.959 34.247 1.37 31.85 3.082 63.358 4.452 95.208 2.055 41.439-8.219 118.839 20.548 153.429 48.974 59.248 123.633 15.754 168.84-21.918 23.973-20.206 47.946-40.412 71.92-60.618 19.521-16.439 47.604-33.22 63.358-53.426 26.028 10.274 56.166 15.069 83.221 22.603 47.946 13.014 106.167 39.385 157.196 37.33 42.467-1.712 92.126-30.823 97.948-76.714 2.74-22.261-8.219-42.467-16.439-62.33-22.603-55.481-46.919-110.962-68.153-167.128-5.48-14.384-8.562-21.576-1.712-36.987 9.932-20.891 28.083-41.439 40.755-60.961zM346.585 860.982c5.48-4.795 2.055 3.425 0 0v0zM776.391 395.559c-20.548 31.165-60.961 73.975-65.413 113.359-4.452 39.042 27.74 89.043 41.782 123.291 10.959 26.371 21.576 53.084 32.535 79.454 2.055 5.137 7.877 28.425 13.014 41.439-1.027-0.342-2.397-0.342-3.425-0.685-29.795-8.219-59.248-16.096-89.043-24.316-41.097-11.302-89.043-32.193-132.195-30.823-52.741 1.712-90.413 44.179-128.086 75.687-21.576 18.151-43.494 36.645-65.070 54.796-3.082 2.74-22.603 15.754-34.932 26.371 0-0.342 0-0.685 0-1.027 0.342-5.822-0.685-11.644-0.685-17.124-1.027-25.001-2.397-50.344-3.425-75.344-2.055-44.522-2.74-89.728-6.165-134.25-4.452-56.166-65.413-79.112-107.537-105.14-27.74-17.124-55.481-34.59-83.564-51.714-11.644-7.192-36.645-17.124-41.439-31.165-6.165-17.466 14.041-17.466 29.795-23.288 30.138-11.302 60.276-22.603 90.071-33.905 48.974-18.494 122.606-32.535 143.155-86.989 0.685-1.712 0.685-3.082 1.37-4.795 0.685-1.37 1.37-2.74 1.712-4.452 10.617-43.494 21.576-86.989 32.193-130.483 5.137-20.206 9.932-40.412 15.069-60.618 9.247 10.617 21.233 22.261 25.343 27.398 18.494 23.288 37.33 46.577 55.823 69.522 31.165 39.042 57.193 86.646 112.674 89.386 42.467 1.37 86.989-6.165 129.798-9.247 14.726-1.027 29.11-2.055 43.837-3.082l43.152-4.11c0 0 0.342 0 0.342 0h1.712c8.219-0.685 40.070-1.027 14.726 33.22 0 0 0 0 0 0l-6.165 7.877c0 0 0 0 0 0-3.767 5.137-7.877 10.274-10.274 13.699-16.781 25.686-33.563 51.371-50.686 77.057z"
+                            fill="rgb(40, 56, 75)">
+                        </path>
+                    </svg>
+                    <div class="w-full">
+                        <div class="flex items-center justify-between">
+                            <div class="flex">
+                                <div class="flex">
+                                    <h3 class="text-xl font-semibold" style="margin-left: 10px;">ចំណត</h3>
+                                    <h3 class="pl-[5px] text-xl font-bold text-primary">សៀមរាប</h3>
+                                </div>
+                                <div></div>
+                            </div>
+                            <span class="text-xs font-semibold text-primary">
+                                @php $category = \App\Models\Category::where('id', 3)->first(); @endphp
+                                <a href="{{ url('category/'.$category->slug) }}"
+                                   class="text-xs font-semibold text-primary"> មើលទាំងអស់
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {{-- ============================== Post Items  ===================================== --}}
+        <div class="relative w-full">
+            <div class="w-full overflow-auto" style="overflow: auto;">
+                <div class="relative flex h-auto w-full select-none py-[20px]"
+                     style="transform: translate3d(0px, 0px, 0px);">
+
+                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 3)->get(); @endphp
                     @if(count($posts) > 0)
                         @foreach($posts as $post)
-                            <a href="{{ url('category/'.$post->category->slug.'/'.$post->slug) }}">
-                                <div class="card" style="height: 300px; overflow: hidden;">
-                                    <img src="{{ asset('uploads/post/'.$post->yt_iframe) }}" class="card-img-top"
-                                         alt="..."
-                                         height="200px">
-                                    <div class="card-body px-3">
-                                        <div class="text-muted mb-2">
-                                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                                            <span>{{ $post->category->name }}</span>
+                            <div
+                                class="h-full w-[296px] flex-shrink-0 cursor-pointer px-[5px] sm:w-[296px] md:w-[244px] lg:w-[244px] xl:w-[244px] 2xl:w-[296px]">
+                                <div class="relative z-20 h-[250px] w-full overflow-hidden rounded-[16px]">
+                                    <a href="{{ url('category/'.$post->category->slug.'/'.$post->slug) }}">
+                                        <div
+                                            class="aspect-w-1 aspect-h-1 absolute h-full w-full transform bg-cover bg-center transition-all duration-700 ease-in-out hover:scale-125">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                                <img
+                                                    src="{{ asset('uploads/post/'.$post->yt_iframe) }}"
+                                                    class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                                            </span>
                                         </div>
-                                        <h5 class="card-text text-truncate">{{ $post->name }}</h5>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
+                                <div class="my-[8px] flex flex-col">
+                                    <span
+                                        class="flex items-center text-[14px] text-gray-400">
+                                        <svg class="h-[16px] w-[16px] stroke-gray-400" viewBox="0 0 819 1024"
+                                             style="display: inline-block; stroke: currentcolor; fill: currentcolor;">
+                                            <path
+                                                d="M409.625 204.775c-112.947 0-204.8 91.853-204.8 204.8s91.853 204.799 204.8 204.799c112.948 0 204.801-91.853 204.801-204.799s-91.853-204.8-204.801-204.8zM409.625 511.975c-56.474 0-102.4-45.926-102.4-102.4s45.926-102.4 102.4-102.4c56.474 0 102.401 45.926 102.401 102.4s-45.927 102.4-102.401 102.4zM409.42-0.025c-233.421 0-409.395 176.077-409.395 409.6 0 323.891 246.374 525.311 352.307 596.838 17.306 11.725 37.223 17.613 57.089 17.613 19.814 0 39.629-5.842 56.934-17.516 106.087-71.629 352.82-273.147 352.82-596.935 0.051-233.523-176.128-409.6-409.754-409.6zM409.677 921.574c-92.365-62.413-307.252-237.21-307.252-511.999 0-178.022 129.075-307.2 306.995-307.2 175.258 0 307.405 132.045 307.405 307.2 0 274.636-215.194 449.587-307.149 511.999z">
+                                            </path>
+                                        </svg>&nbsp;{{ $post->category->name }}
+                                    </span>
+                                    <a href="{{ url('category/'.$post->category->slug.'/'.$post->slug) }}">
+                                        <span
+                                            class="text-[18px] font-semibold line-clamp-2">{{ $post->name }}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
                         @endforeach
                     @endif
                 </div>
             </div>
+            {{-- ========================= End of Post Item============================ --}}
+            <button
+                class="shadow-lg hover:shadow-xl flex absolute top-1/2 right-2.5 z-10 ml-4 h-8 w-8  -translate-y-1/2 scale-100 cursor-pointer touch-manipulation items-center justify-center rounded-full border-0 bg-white fill-gray-900 p-2 outline-0 transition-transform hover:scale-110 hover:fill-yellow-500 disabled:hidden">
+                <svg class="h-full w-full" viewBox="0 0 238.003 238.003">
+                    <path
+                        d="M181.776 107.719L78.705 4.648c-6.198-6.198-16.273-6.198-22.47 0s-6.198 16.273 0 22.47l91.883 91.883-91.883 91.883c-6.198 6.198-6.198 16.273 0 22.47s16.273 6.198 22.47 0l103.071-103.039a15.741 15.741 0 0 0 4.64-11.283c0-4.13-1.526-8.199-4.64-11.313z">
+                    </path>
+                </svg>
+            </button>
         </div>
 
-        <h5 class="mb-3 mt-5">
-            <i class="fas fa-star fa-fw fa-lg text-danger me-1"></i> Explore in <span
-                class="text-danger fw-bold">Kampot</span>
-        </h5>
-
-        <div class="row">
-            <div class="col-12">
-                <div class="owl-carousel owl-theme">
-                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 18)->get(); @endphp
-                    @if(count($posts) > 0)
-                        @foreach($posts as $post)
-                            <a href="{{ url('category/'.$post->category->slug.'/'.$post->slug) }}">
-                                <div class="card" style="height: 300px; overflow: hidden;">
-                                    <img src="{{ asset('uploads/post/'.$post->yt_iframe) }}" class="card-img-top"
-                                         alt="..."
-                                         height="200px">
-                                    <div class="card-body px-3">
-                                        <div class="text-muted mb-2">
-                                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                                            <span>{{ $post->category->name }}</span>
-                                        </div>
-                                        <h5 class="card-text text-truncate">{{ $post->name }}</h5>
-                                    </div>
-                                </div>
-                            </a>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-        </div>
-
-    </div>
+        {{-- saperate div --}}
+        <div class="h-[12px] w-full"></div>
 
 @endsection
-
-
-
-
-
-{{--        <div class="row g-3">--}}
-{{--            @foreach(\App\Models\Category::where('navbar_status', 1)->where('status', 1)->get() as $category)--}}
-{{--                <div class="col-3 g-2">--}}
-{{--                    <div class="rounded-3 bg-image" style="height: 150px;">--}}
-{{--                        <img src="{{ asset('uploads/category/'.$category->image) }}" class="img-fluid"/>--}}
-{{--                        <a href="{{ url('category/'.$category->slug) }}">--}}
-{{--                            <div--}}
-{{--                                class="card-topic mask text-light d-flex justify-content-center flex-column text-center">--}}
-{{--                                <h5 class=" card-title">{{ $category->name }}</h5>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}

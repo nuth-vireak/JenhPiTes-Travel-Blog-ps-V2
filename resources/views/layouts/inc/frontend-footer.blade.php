@@ -1,103 +1,3 @@
-{{--<!-- Footer -->--}}
-{{--<footer class="container-fluid text-center text-lg-start bg-white text-muted">--}}
-{{--    <!-- Section: Social media -->--}}
-{{--    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">--}}
-{{--        <!-- Left -->--}}
-{{--        <div class="me-5 d-none d-lg-block">--}}
-{{--            <span>Get connected with us on social networks:</span>--}}
-{{--        </div>--}}
-{{--        <!-- Left -->--}}
-
-{{--        <!-- Right -->--}}
-{{--        <div>--}}
-{{--            <a href="" class="me-4 link-secondary">--}}
-{{--                <i class="fab fa-github"></i>--}}
-{{--            </a>--}}
-{{--        </div>--}}
-{{--        <!-- Right -->--}}
-{{--    </section>--}}
-{{--    <!-- Section: Social media -->--}}
-
-{{--    <!-- Section: Links  -->--}}
-{{--    <section class="">--}}
-{{--        <div class="text-center text-md-start mt-5">--}}
-{{--            <!-- Grid row -->--}}
-{{--            <div class="row mt-3">--}}
-{{--                <!-- Grid column -->--}}
-{{--                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">--}}
-{{--                    <!-- Content -->--}}
-{{--                    <h6 class="text-uppercase fw-bold mb-4">--}}
-{{--                        <i class="fab fa-atlassian me-2 text-secondary"></i>JenhPiTes--}}
-{{--                    </h6>--}}
-{{--                    <p>--}}
-{{--                        JenhPiTes its purpose is to explore the eateries, travel destinations, tips for packing, and guidance to support you in picking where to head next.--}}
-{{--                    </p>--}}
-{{--                </div>--}}
-{{--                <!-- Grid column -->--}}
-
-{{--                <!-- Grid column -->--}}
-{{--                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">--}}
-{{--                    <!-- Links -->--}}
-{{--                    <h6 class="text-uppercase fw-bold mb-4">--}}
-{{--                        Team Members--}}
-{{--                    </h6>--}}
-{{--                    <p>--}}
-{{--                        <a href="#!" class="text-reset">Tan Bunchhay</a>--}}
-{{--                    </p>--}}
-{{--                    <p>--}}
-{{--                        <a href="#!" class="text-reset">Nuth Vireak</a>--}}
-{{--                    </p>--}}
-{{--                    <p>--}}
-{{--                        <a href="#!" class="text-reset">Pok Hengly</a>--}}
-{{--                    </p>--}}
-{{--                    <p>--}}
-{{--                        <a href="#!" class="text-reset">Than Limphengeang</a>--}}
-{{--                    </p>--}}
-{{--                </div>--}}
-{{--                <!-- Grid column -->--}}
-
-{{--                <!-- Grid column -->--}}
-{{--                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">--}}
-{{--                    <!-- Links -->--}}
-{{--                    <h6 class="text-uppercase fw-bold mb-4">--}}
-{{--                        Team Members [Cont.]--}}
-{{--                    </h6>--}}
-{{--                    <p>--}}
-{{--                        <a href="#!" class="text-reset">Neang Soytry</a>--}}
-{{--                    </p>--}}
-{{--                    <p>--}}
-{{--                        <a href="#!" class="text-reset">Dum Sileang</a>--}}
-{{--                    </p>--}}
-{{--                    <p>--}}
-{{--                        <a href="#!" class="text-reset">Non Menghung</a>--}}
-{{--                    </p>--}}
-{{--                </div>--}}
-{{--                <!-- Grid column -->--}}
-
-{{--                <!-- Grid column -->--}}
-{{--                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">--}}
-{{--                    <!-- Links -->--}}
-{{--                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>--}}
-{{--                    <p><i class="fas fa-home me-3 text-secondary"></i>ITE, Faculty of Engineering, RUPP</p>--}}
-{{--                    <p><i class="fas fa-phone me-3 text-secondary"></i> 099 747 687</p>--}}
-{{--                </div>--}}
-{{--                <!-- Grid column -->--}}
-{{--            </div>--}}
-{{--            <!-- Grid row -->--}}
-{{--        </div>--}}
-{{--    </section>--}}
-{{--    <!-- Section: Links  -->--}}
-
-{{--    <!-- Copyright -->--}}
-{{--    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">--}}
-{{--        © 2023 Copyright:--}}
-{{--        <a class="text-reset" href="">JenhPiTes</a>--}}
-{{--    </div>--}}
-{{--    <!-- Copyright -->--}}
-{{--</footer>--}}
-{{--<!-- Footer -->--}}
-
-
 <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 <footer class="w-full bg-primary py-[50px]">
     <div class="container mx-auto flex justify-between">
@@ -122,21 +22,34 @@
                 និងការណែនាំដើម្បីគាំទ្រអ្នកក្នុងការជ្រើសរើសកន្លែងដែលត្រូវទៅបន្ទាប់</p>
         </div>
         <div class="flex flex-1 justify-end">
-            <div class="space-x-[10px] text-secondary">
-                <a href="" class="hover:text-default">
-                    <img src="" style="width: 20px; height: 20px; background: black;">
+            <div class="space-x-[10px] text-primary">
+                <a href="https://github.com/nuth-vireak" target="_blank" class="hover:text-default flex flex-1 justify-start">
+                    <i class="fab fa-github" style="width: 25px; height: 25px; color: #FFFFFF; margin-top: 2px;"></i>
+                    <p class="text-white one pl-[5px]">នុត វីរះ</p>
                 </a>
-                <a href="" class="hover:text-default">
-                    <img src="" style="width: 20px; height: 20px; background: black;">
+                <a href="https://github.com/pokhengly" target="_blank" class="hover:text-default flex flex-1 justify-start">
+                    <i class="fab fa-github" style="width: 25px; height: 25px; color: #FFFFFF; margin-top: 2px;"></i>
+                    <p class="text-white one pl-[5px]">ប៊ុក ហេងលី</p>
                 </a>
-                <a href="" class="hover:text-default">
-                    <img src="" style="width: 20px; height: 20px; background: black;">
+                <a href="https://github.com/LeanG008" target="_blank" class="hover:text-default flex flex-1 justify-start">
+                    <i class="fab fa-github" style="width: 25px; height: 25px; color: #FFFFFF; margin-top: 2px;"></i>
+                    <p class="text-white one pl-[5px]">ឌុម សុីលៀង</p>
                 </a>
-                <a href="" class="hover:text-default">
-                    <img src="" style="width: 20px; height: 20px; background: black;">
+                <a href="https://github.com/Parameow3" target="_blank" class="hover:text-default flex flex-1 justify-start">
+                    <i class="fab fa-github" style="width: 25px; height: 25px; color: #FFFFFF; margin-top: 2px;"></i>
+                    <p class="text-white one pl-[5px]">តាន់ ប៊ុនឆាយ</p>
                 </a>
-                <a href="" class="hover:text-default">
-                    <img src="" style="width: 20px; height: 20px; background: black;">
+                <a href="https://github.com/TryCalling" target="_blank" class="hover:text-default flex flex-1 justify-start">
+                    <i class="fab fa-github" style="width: 25px; height: 25px; color: #FFFFFF; margin-top: 2px;"></i>
+                    <p class="text-white one pl-[5px]">នាង ស្រូយទ្រី</p>
+                </a>
+                <a href="https://github.com/Tobi17890" target="_blank" class="hover:text-default flex flex-1 justify-start">
+                    <i class="fab fa-github" style="width: 25px; height: 25px; color: #FFFFFF; margin-top: 2px;"></i>
+                    <p class="text-white one pl-[5px]">ថាន លឹមផេងអៀង</p>
+                </a>
+                <a href="https://github.com/BenHUn" target="_blank" class="hover:text-default flex flex-1 justify-start">
+                    <i class="fab fa-github" style="width: 25px; height: 25px; color: #FFFFFF; margin-top: 2px;"></i>
+                    <p class="text-white one pl-[5px]">ណូន ម៉េងហ៊ុន</p>
                 </a>
             </div>
         </div>
