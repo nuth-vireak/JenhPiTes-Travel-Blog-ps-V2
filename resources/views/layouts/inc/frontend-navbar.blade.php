@@ -6,7 +6,7 @@
             <i class="fab fa-atlassian fa-fw fa-xl text-primary"></i>
         </a>
 
-        <a href="{{ url('admin/dashboard') }}">
+        <a href="{{ url('admin/dashboard') }}" target="_blank">
 {{--            <button type="button" class="btn btn-outline-danger text-danger px-3" href="{{ url('admin/dashboard') }}">--}}
 {{--                DASHBOARD--}}
 {{--            </button>--}}

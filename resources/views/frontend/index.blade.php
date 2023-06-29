@@ -150,7 +150,7 @@
                                             <span
                                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                                 <img
-                                                    src="{{ asset('uploads/post/'.$post->yt_iframe) }}"
+                                                    src="{{ asset('uploads/post/'.$post->image) }}"
                                                     class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
                                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
                                             </span>
@@ -251,7 +251,7 @@
                                             <span
                                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                                 <img
-                                                    src="{{ asset('uploads/post/'.$post->yt_iframe) }}"
+                                                    src="{{ asset('uploads/post/'.$post->image) }}"
                                                     class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
                                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
                                             </span>
@@ -352,7 +352,7 @@
                                             <span
                                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                                 <img
-                                                    src="{{ asset('uploads/post/'.$post->yt_iframe) }}"
+                                                    src="{{ asset('uploads/post/'.$post->image) }}"
                                                     class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
                                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
                                             </span>

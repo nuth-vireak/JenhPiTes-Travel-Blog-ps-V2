@@ -48,7 +48,7 @@
 
                     <div class="mb-3">
                         <label for="" class="form-label">Youtube Iframe Link</label>
-                        <input type="file" name="yt_iframe" class="form-control">
+                        <input type="file" name="image" class="form-control">
                     </div>
 
                     <h4>SEO Tags</h4>

@@ -17,7 +17,7 @@ class Post extends Model
         'name',
         'slug',
         'description',
-        'yt_iframe',
+        'image',
         'meta_title',
         'meta_description',
         'meta_keywords',

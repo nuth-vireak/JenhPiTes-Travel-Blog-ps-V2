@@ -38,7 +38,7 @@
                             <td>{{ $item->category->name }}</td>
                             <td>{{ $item->name }}</td>
                             <td>
-                                <img src="{{ asset('uploads/post') }}/{{ $item->yt_iframe }}" alt="" width="50"
+                                <img src="{{ asset('uploads/post') }}/{{ $item->image }}" alt="" width="50"
                                      height="50">
                             </td>
                             <td>

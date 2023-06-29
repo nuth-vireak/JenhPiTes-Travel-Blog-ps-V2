@@ -35,11 +35,11 @@ class PostController extends Controller
         $post->slug = Str::slug($data['slug']);
         $post->description = $data['description'];
 
-        if ($request->hasFile('yt_iframe')) {
-            $file = $request->file('yt_iframe');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move('uploads/post/', $filename);
-            $post->yt_iframe = $filename;
+            $post->image = $filename;
         }
 
         $post->meta_title = $data['meta_title'];
@@ -67,17 +67,17 @@ class PostController extends Controller
         $post->slug = Str::slug($data['slug']);
         $post->description = $data['description'];
 
-        if ($request->hasFile('yt_iframe')) {
+        if ($request->hasFile('image')) {
 
-            $destination = 'uploads/post/' . $post->yt_iframe;
+            $destination = 'uploads/post/' . $post->image;
             if (File::exists($destination)) {
                 File::delete($destination);
             }
 
-            $file = $request->file('yt_iframe');
+            $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move('uploads/post/', $filename);
-            $post->yt_iframe = $filename;
+            $post->image = $filename;
         }
 
         $post->meta_title = $data['meta_title'];
