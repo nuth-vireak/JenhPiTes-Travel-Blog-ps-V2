@@ -33,7 +33,7 @@ class FrontendController extends Controller
 
         if ($category) {
             $post = Post::where('category_id', $category->id)->where('slug', $post_slug)->where('status', 1)->first();
-            return view('frontend.post.view', compact('post'));
+            return view('frontend.post.view', compact('post', 'category'));
         } else {
             return redirect('/');
         }

@@ -720,14 +720,24 @@ input {
     top: 50%;
 }
 
-img {
+/*img {*/
+/*    transition: all 0.3s ease-in-out;*/
+/*}*/
+
+/*img:hover {*/
+/*    transform: scale(1.4);*/
+/*    position: relative;*/
+/*}*/
+
+.image {
     transition: all 0.3s ease-in-out;
 }
 
-img:hover {
+.image:hover {
     transform: scale(1.4);
     position: relative;
 }
+
 svg {
     width: 16px;
     height: 16px;

@@ -75,7 +75,7 @@
                                     <img
                                         alt=""
                                         src="{{ asset('uploads/category/'.$category->image) }}"
-                                        class="image h-full w-full rounded-[16px] object-cover transition-all duration-700 ease-in-out group-hover:scale-125"
+                                        class="h-full w-full rounded-[16px] object-cover transition-all duration-700 ease-in-out group-hover:scale-125"
                                         style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
                                         sizes="100vw">
                                 </span>
