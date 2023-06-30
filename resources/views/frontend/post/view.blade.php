@@ -52,7 +52,7 @@
             @endif
 
             <div class="card card-body">
-                <h6 class="card-title">Leave a comment</h6>
+                <h6 class="card-title">បញ្ចេញមតិរបស់អ្នក</h6>
                 <form action="{{ url('comments') }}" method="POST">
                     @csrf
                     <input type="text" value="{{ $post->slug }}" name="post_slug" hidden>
@@ -78,7 +78,7 @@
 
                     @if(auth()->check() && auth()->user()->id == $comment->user_id)
                         <div>
-                            <button type="button" value="{{ $comment->id }}" class="deleteComment btn btn-sm btn-danger">Delete</button>
+                            <button type="button" value="{{ $comment->id }}" class="deleteComment btn btn-sm btn-danger">លុបចេញ</button>
                         </div>
                     @endif
 
@@ -86,7 +86,7 @@
         </div>
 
         @empty
-            <h6>No comments found!</h6>
+            <h6>មិនមានការបញ្ចេញមតិ</h6>
         @endforelse
 
     </main>

@@ -100,7 +100,7 @@
             @else
                 <div class="card card-shadow mt-4">
                     <div class="card-body">
-                        <h2>No post found</h2>
+                        <h2>ចង់និយាយថាអត់មានអត្តបទទេ!!</h2>
                     </div>
                 </div>
             @endif
