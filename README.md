@@ -1,3 +1,6 @@
+![image](https://github.com/nuth-vireak/JenhPiTes-Travel-Blog-ps-V2/assets/66857698/40eec976-c8a7-4623-abcb-c439376e6167)
+
+
 # JenhPiTes Travel Blog
 
 The project is a travel blog that is being developed as a final assignment for the third year of the second semester in university. The aim of the project is to provide a platform for students to share their travel experiences, stories, and photos with others.
