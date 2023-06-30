@@ -122,9 +122,9 @@
                             </div>
                             <span class="text-xs font-semibold text-primary">
                                 @php $category = \App\Models\Category::where('id', 1)->first(); @endphp
-                                <a href="{{ url('category/'.$category->slug) }}"
-                                   class="text-xs font-semibold text-primary"> មើលទាំងអស់
-                                </a>
+                                @if ($category)
+                                    <a href="{{ url('category/'.$category->slug) }}" class="text-xs font-semibold text-primary">មើលទាំងអស់</a>
+                                @endif
                             </span>
                         </div>
                     </div>
@@ -223,9 +223,9 @@
                             </div>
                             <span class="text-xs font-semibold text-primary">
                                 @php $category = \App\Models\Category::where('id', 2)->first(); @endphp
-                                <a href="{{ url('category/'.$category->slug) }}"
-                                   class="text-xs font-semibold text-primary"> មើលទាំងអស់
-                                </a>
+                                @if ($category)
+                                    <a href="{{ url('category/'.$category->slug) }}" class="text-xs font-semibold text-primary">មើលទាំងអស់</a>
+                                @endif
                             </span>
                         </div>
                     </div>
@@ -324,9 +324,9 @@
                             </div>
                             <span class="text-xs font-semibold text-primary">
                                 @php $category = \App\Models\Category::where('id', 3)->first(); @endphp
-                                <a href="{{ url('category/'.$category->slug) }}"
-                                   class="text-xs font-semibold text-primary"> មើលទាំងអស់
-                                </a>
+                                @if ($category)
+                                    <a href="{{ url('category/'.$category->slug) }}" class="text-xs font-semibold text-primary">មើលទាំងអស់</a>
+                                @endif
                             </span>
                         </div>
                     </div>
