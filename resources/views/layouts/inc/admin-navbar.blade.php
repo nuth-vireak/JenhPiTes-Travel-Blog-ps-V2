@@ -1,8 +1,16 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between">
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+
+<nav class="sb-topnav navbar navbar-expand d-flex justify-content-between">
 
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="{{ url('/') }}">
-        <img src="{{ asset('img.png') }}" alt="logo" width="35" height="34" class="rounded-2">
+    <div class="navbar-brand ps-3">
+        <div style="width: 35px; height: 34px;"></div>
+    </div>
+
+    <a class="navbar-brand me-3" href=" {{ url('/') }} ">
+        <i class="fab fa-atlassian fa-fw fa-xl text-primary"></i>
     </a>
 
     <div class="d-flex justify-content-end">

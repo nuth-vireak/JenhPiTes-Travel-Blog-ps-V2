@@ -28,12 +28,15 @@
 
     <div class="container-fluid px-4">
 
-        <div class="card mt-4">
-            <div class="card-header">
-                <h4>View Category
-                    <a href="{{ url('admin/add-category') }}" class="btn btn-primary float-end">Add Category</a>
-                </h4>
+        <div class=" mt-4">
+            <div class="d-flex justify-between items-center mb-4">
+                <div class="text-2xl font-semibold mt-4 mb-4">បង្កើតខេត្ត-ក្រុងថ្មី</div>
+                <a href="{{ url('admin/add-category') }}" class="btn btn-primary float-end">
+                    <i class="fas fa-plus"></i>
+                    បង្កើតថ្មី
+                </a>
             </div>
+
             <div class="card-body">
                 @if(session('message'))
                     <div class="alert alert-success">{{ session('message') }}</div>
@@ -41,38 +44,43 @@
 
                 <table id="dataTable" class="table table-bordered">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Category Name</th>
-                        <th>Image</th>
-                        <th>Status</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                    <tr class="align-baseline">
+                        <th>លេខរៀង</th>
+                        <th>ឈ្មោះខេត្ត-ក្រុង</th>
+                        <th>រូបភាព</th>
+                        <th>ស្ថានភាព</th>
+                        <th>កែប្រែ</th>
+                        <th>លុប</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($category as $item)
-                        <tr>
-                            <td>{{ $item->id }}</td>
-                            <td>{{ $item->name }}</td>
+                        <tr class="align-baseline">
+                            <td class="font-semibold">{{ $item->id }}</td>
+                            <td class="font-semibold">{{ $item->name }}</td>
                             <td>
-                                <img src="{{ asset('uploads/category') }}/{{ $item->image }}" alt="" width="50"
-                                     height="50">
+                                <img class="rounded-2 border-2" src="{{ asset('uploads/category') }}/{{ $item->image }}" alt="" width="50" height="50">
                             </td>
                             <td>
                                 @if($item->status == 1)
-                                    <span class="badge bg-success">Active</span>
+                                    <i class="fas fa-check-square text-success"></i>
+                                    <span class="text-success font-semibold">កំពុងបង្ហាញ</span>
                                 @else
-                                    <span class="badge bg-danger">Inactive</span>
+                                    <i class="fas fa-times-circle text-danger"></i>
+                                    <span class="text-danger font-semibold">មិនបង្ហាញ</span>
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ url('admin/edit-category/'. $item->id) }}" class="btn btn-primary">Edit</a>
+                                <a href="{{ url('admin/edit-category/'. $item->id) }}" class="btn btn-primary">
+                                    <i class="fas fa-edit text-white mr-1"></i>
+                                    កែប្រែ
+                                </a>
                             </td>
                             <td>
                                 {{--                                <a href="{{ url('admin/delete-category/'. $item->id) }}" class="btn btn-danger">Delete</a>--}}
                                 <button type="button" class="btn btn-danger deleteCategoryBtn" value="{{ $item->id }}">
-                                    Delete
+                                    <i class="fas fa-trash-alt text-white mr-1"></i>
+                                    លុប
                                 </button>
                             </td>
                         </tr>
