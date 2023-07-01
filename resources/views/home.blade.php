@@ -1,3 +1,7 @@
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+
 @extends('layouts.app')
 
 @section('content')
