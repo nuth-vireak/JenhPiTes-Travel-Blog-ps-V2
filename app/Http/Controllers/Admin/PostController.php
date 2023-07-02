@@ -48,7 +48,7 @@ class PostController extends Controller
         $post->created_by = Auth::user()->id;
         $post->save();
 
-        return redirect('admin/posts')->with('message', 'Post added successfully!');
+        return redirect('admin/posts')->with('message', 'អត្តបទបានបង្កើតដោយជោគជ័យ!');
     }
 
     public function edit($post_id) {
@@ -86,13 +86,13 @@ class PostController extends Controller
         $post->created_by = Auth::user()->id;
         $post->update();
 
-        return redirect('admin/posts')->with('message', 'Post updated successfully!');
+        return redirect('admin/posts')->with('message', 'អត្តបទបានកែប្រែដោយជោគជ័យ!');
     }
 
     public function destroy($post_id) {
         $post = Post::find($post_id);
         $post->delete();
 
-        return redirect('admin/posts')->with('message', 'Post deleted successfully!');
+        return redirect('admin/posts')->with('message', 'អត្តបទបានលុបដោយជោគជ័យ!');
     }
 }

@@ -11,15 +11,15 @@
                 <form action="{{ url('admin/delete-category') }}" method="POST">
                     @csrf
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Category with its Post</h1>
+                        <div class="modal-title fs-5 font-semibold" id="exampleModalLabel">លុបខេត្ត-ក្រុងនិងអត្ថបទរបស់វា</div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <input type="hidden" name="category_delete_id" id="category_id">
-                        <h5>Are you sure you want to delete this Category with all its posts. ?</h5>
+                        <div class="font-semibold">អ្នកប្រាកដជាចង់លុបខេត្ត-ក្រុងនិងអត្ថបទរបស់វា ?</div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger">Yes Delete</button>
+                        <button type="submit" class="btn btn-danger"> បាទ/ចាស លុបចោល</button>
                     </div>
                 </form>
             </div>

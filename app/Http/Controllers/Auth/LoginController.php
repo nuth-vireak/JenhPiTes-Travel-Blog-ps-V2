@@ -32,10 +32,10 @@ class LoginController extends Controller
     public function authenticated()
     {
         if (Auth::user()->role_as == '1') {
-            return redirect('/admin/dashboard')->with('message', 'Welcome back, Admin Dashboard!');
+            return redirect('/admin/dashboard')->with('message', 'សូមស្វាគមន៍ម្តងទៀតមកកាន់ផ្ទាំងគ្រប់គ្រងរបស់អ្នក!');
         }
         else if (Auth::user()->role_as == '0') {
-            return redirect('/home')->with('message', 'Login successful!');
+            return redirect('/home')->with('message', 'ចូលប្រើប្រាស់ដោយជោគជ័យ!');
         }
         else {
             return redirect('/');

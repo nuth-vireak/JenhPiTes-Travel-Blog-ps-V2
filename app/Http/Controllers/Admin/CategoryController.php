@@ -42,7 +42,7 @@ class CategoryController extends Controller
 
         $this->updateCategoryMetadataAndStatus($data, $category, $request);
 
-        return redirect('admin/category')->with('message', 'Category added successfully!');
+        return redirect('admin/category')->with('message', 'ខេត្ត-ក្រុងបានបន្ថែមដោយជោគជ័យ!');
     }
 
     public function edit($category_id)
@@ -75,7 +75,7 @@ class CategoryController extends Controller
 
         $this->updateCategoryMetadataAndStatus($data, $category, $request);
 
-        return redirect('admin/category')->with('message', 'Category updated successfully!');
+        return redirect('admin/category')->with('message', 'ខេត្ត-ក្រុងបានកែប្រែដោយជោគជ័យ!');
     }
 
     public function destroy(Request $request)
@@ -93,9 +93,9 @@ class CategoryController extends Controller
             $category->posts()->delete();
             $category->delete();
 
-            return redirect('admin/category')->with('message', 'Category deleted with its posts successfully!');
+            return redirect('admin/category')->with('message', 'ខេត្ត-ក្រុងនិងអត្ថបទរបស់វាត្រូវបានលុបដោយជោគជ័យ!');
         } else {
-            return redirect('admin/category')->with('message', 'Category not found!');
+            return redirect('admin/category')->with('message', 'រកមិនឃើញខេត្ត-ក្រុងនេះទេ!');
         }
     }
 
