@@ -6,13 +6,9 @@
 
     <div class="container-fluid px-4">
 
-        <div class="card mt-4">
+        <div class="mt-4">
 
-            <div class="card-header">
-                <h4>View Users
-                    <a href="{{ url('admin/add-post') }}" class="btn btn-primary btn-sm float-end">Add User</a>
-                </h4>
-            </div>
+            <div class="text-2xl font-semibold mt-4 mb-4">មើលអ្នកប្រើប្រាស់ទាំងអស់</div>
             <div class="card-body">
 
                 @if(session('message'))
@@ -21,29 +17,49 @@
 
                 <table id="dataTable" class="table table-bordered">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Edit</th>
+                    <tr class="align-baseline">
+                        <th>
+                            <i class="fas fa-list-ol mr-1"></i>
+                            លេខរៀង
+                        </th>
+                        <th>
+                            <i class="fas fa-user mr-1"></i>
+                            ឈ្មោះអ្នកប្រើប្រាស់
+                        </th>
+                        <th>
+                            <i class="fas fa-envelope mr-1"></i>
+                            អ៊ីម៉ែល
+                        </th>
+                        <th>
+                            <i class="fas fa-user-tag mr-1"></i>
+                            តួនាទី
+                        </th>
+                        <th>
+                            <i class="fas fa-edit mr-1"></i>
+                            កែប្រែ
+                        </th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="align-baseline">
                     @foreach($users as $user)
                         <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
+                            <td class="font-semibold">{{ $user->id }}</td>
+                            <td class="font-semibold">{{ $user->name }}</td>
+                            <td class="font-semibold">{{ $user->email }}</td>
                             <td>
                                 @if($user->role_as == 1)
-                                    <span class="badge bg-success">Admin</span>
+                                    <i class="fas fa-user-shield text-danger"></i>
+                                    <span class="text-danger font-semibold">អ្នកគ្រប់គ្រង</span>
                                 @else
-                                    <span class="badge bg-danger">User</span>
+                                    <i class="fas fa-user text-primary"></i>
+                                    <span class="text-primary font-semibold">អ្នកប្រើប្រាស់</span>
                                 @endif
                             </td>
-                            <td>
-                                <a href="{{ url('admin/user/'. $user->id) }}" class="btn btn-primary">Edit</a>
+                            <td class="">
+                                <a href="{{ url('admin/user/'. $user->id) }}" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i>
+                                    កែប្រែ
+                                </a>
                             </td>
                         </tr>
                     @endforeach

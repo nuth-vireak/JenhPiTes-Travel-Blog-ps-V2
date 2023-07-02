@@ -32,7 +32,6 @@ class CategoryController extends Controller
         $category->name = $data['name'];
         $category->slug = Str::slug($data['slug']);
         $category->description = $data['description'];
-//        $category->image = $data['image'];
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
@@ -41,14 +40,7 @@ class CategoryController extends Controller
             $category->image = $filename;
         }
 
-        $category->meta_title = $data['meta_title'];
-        $category->meta_description = $data['meta_description'];
-        $category->meta_keywords = $data['meta_keywords'];
-
-        $category->navbar_status = $request->navbar_status ? 1 : 0;
-        $category->status = $request->status ? 1 : 0;
-        $category->created_by = Auth::user()->id;
-        $category->save();
+        $this->updateCategoryMetadataAndStatus($data, $category, $request);
 
         return redirect('admin/category')->with('message', 'Category added successfully!');
     }
@@ -67,7 +59,6 @@ class CategoryController extends Controller
         $category->name = $data['name'];
         $category->slug = Str::slug($data['slug']);
         $category->description = $data['description'];
-//        $category->image = $data['image'];
 
         if ($request->hasFile('image')) {
 
@@ -82,6 +73,40 @@ class CategoryController extends Controller
             $category->image = $filename;
         }
 
+        $this->updateCategoryMetadataAndStatus($data, $category, $request);
+
+        return redirect('admin/category')->with('message', 'Category updated successfully!');
+    }
+
+    public function destroy(Request $request)
+    {
+        $category = Category::find($request->category_delete_id);
+
+        if ($category) {
+
+            $destination = 'uploads/category/' . $category->image;
+
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+
+            $category->posts()->delete();
+            $category->delete();
+
+            return redirect('admin/category')->with('message', 'Category deleted with its posts successfully!');
+        } else {
+            return redirect('admin/category')->with('message', 'Category not found!');
+        }
+    }
+
+    /**
+     * @param mixed $data
+     * @param $category
+     * @param CategoryFormRequest $request
+     * @return void
+     */
+    public function updateCategoryMetadataAndStatus(mixed $data, $category, CategoryFormRequest $request): void
+    {
         $category->meta_title = $data['meta_title'];
         $category->meta_description = $data['meta_description'];
         $category->meta_keywords = $data['meta_keywords'];
@@ -90,27 +115,5 @@ class CategoryController extends Controller
         $category->status = $request->status ? 1 : 0;
         $category->created_by = Auth::user()->id;
         $category->save();
-
-        return redirect('admin/category')->with('message', 'Category updated successfully!');
-    }
-
-    public function destroy(Request $request)
-    {
-
-        $category = Category::find($request->category_delete_id);
-
-        if ($category) {
-
-            $destination = 'uploads/category/' . $category->image;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
-
-            $category->posts()->delete();
-            $category->delete();
-            return redirect('admin/category')->with('message', 'Category deleted with its posts successfully!');
-        } else {
-            return redirect('admin/category')->with('message', 'Category not found!');
-        }
     }
 }

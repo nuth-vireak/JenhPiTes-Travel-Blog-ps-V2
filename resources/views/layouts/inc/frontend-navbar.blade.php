@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <!-- Navbar brand -->

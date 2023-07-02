@@ -4,6 +4,17 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed name
+ * @property mixed slug
+ * @property mixed description
+ * @property mixed image
+ * @property mixed meta_title
+ * @property mixed meta_description
+ * @property mixed meta_keywords
+ * @property mixed navbar_status
+ * @property mixed status
+ */
 class CategoryFormRequest extends FormRequest
 {
 

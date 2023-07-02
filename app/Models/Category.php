@@ -4,7 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property string $name
+ * @property string $slug
+ * @property string $description
+ * @property string $image
+ * @property string $meta_title
+ * @property string $meta_description
+ * @property string $meta_keywords
+ * @property string $navbar_status
+ * @property string $status
+ * @property string $created_by
+ */
 class Category extends Model
 {
     use HasFactory;
@@ -24,7 +37,7 @@ class Category extends Model
         'created_by',
     ];
 
-    public function posts()
+    public function posts(): HasMany
     {
         return $this->hasMany(Post::class, 'category_id', 'id');
     }

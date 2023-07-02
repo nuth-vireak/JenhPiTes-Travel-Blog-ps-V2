@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostFormRequest;
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -83,7 +82,7 @@ class PostController extends Controller
         $post->meta_title = $data['meta_title'];
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
-        $post->status = $request->status == true ? '1' : '0';
+        $post->status = $request->status ? '1' : '0';
         $post->created_by = Auth::user()->id;
         $post->update();
 

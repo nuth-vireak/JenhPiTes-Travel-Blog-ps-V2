@@ -33,7 +33,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label font-semibold">រូបភាព |Image|</label>
-                        <input type="file" name="image" class="form-control">
+                        <input type="file" name="image" class="form-control font-semibold">
                     </div>
 
                     <div class="font-semibold mt-5 mb-3">
@@ -50,13 +50,15 @@
                         <textarea name="meta_description" class="form-control font-semibold" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label font-semibold">ពាក្យគន្លឹះសម្រាប់ការស្វែងរកបន្ថែមទៀត |Meta Keywords|</label>
+                        <label for="" class="form-label font-semibold">ពាក្យគន្លឹះសម្រាប់ការស្វែងរកបន្ថែមទៀត |Meta
+                            Keywords|</label>
                         <textarea name="meta_keywords" class="form-control font-semibold" rows="3"></textarea>
                     </div>
 
                     <div class="font-semibold mt-5 mb-3">
                         <i class="fas fa-info-circle"></i>
-                        សូមជ្រើសរើសស្ថានភាពនៃការបង្កើតខេត្ត-ក្រុងនេះដែលអ្នកចង់បង្កើត |Please select the status of this category you want to create|
+                        សូមជ្រើសរើសស្ថានភាពនៃការបង្កើតខេត្ត-ក្រុងនេះដែលអ្នកចង់បង្កើត |Please select the status of this
+                        category you want to create|
                     </div>
 
                     <div class="row">
@@ -69,7 +71,7 @@
                             <input class="form-check" type="checkbox" name="status">
                         </div>
                         <div class="col-md-7 mb-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-success">
                                 <i class="fas fa-plus mr-1"></i>
                                 បង្កើតថ្មី
                             </button>
