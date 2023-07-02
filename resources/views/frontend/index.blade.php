@@ -1,7 +1,3 @@
-<!-- MDB -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
-<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-
 @extends('layouts.app')
 
 @section('title', "JenhPiTes")
@@ -47,12 +43,12 @@
                     <a href="">
                         <div class="absolute h-full w-full rounded-[16px]">
                             <span
-                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0 none; margin: 0; padding: 0; position: absolute; inset: 0;">
                                 <img
                                     alt=""
                                     src="https://jomnot.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2FjGl7otiKn8qlUhSSX-Fxow%2F2ea6bb4f-b2f3-47ad-4d6f-6beeea58a500%2Fpublic&w=3840&q=80"
                                     class="h-full w-full rounded-[16px] object-cover transition-all duration-700 ease-in-out group-hover:scale-125"
-                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                    style="position: absolute; inset: 0; box-sizing: border-box; padding: 0; border: medium none; margin: auto; display: block; width: 0; height: 0; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
                                     sizes="100vw">
                             </span>
                         </div>
@@ -64,19 +60,19 @@
                 </div>
             </div>
 
-            @foreach(\App\Models\Category::where('navbar_status', 1)->where('status', 1)->get() as $category)
+            @foreach(\App\Models\Category::query()->where('navbar_status', 1)->where('status', 1)->get() as $category)
                 <div class="flex flex-col items-center justify-center">
                     <div
                         class="jomnot-fix-safari-radius relative h-[150px] w-full flex-shrink-0 cursor-pointer overflow-hidden rounded-[16px] shadow-base duration-700">
                         <a href="{{ url('category/'.$category->slug) }}">
                             <div class="absolute h-full w-full rounded-[16px] image">
                                 <span
-                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; border: 0 none; margin: 0; padding: 0; position: absolute; inset: 0;">
                                     <img
                                         alt=""
                                         src="{{ asset('uploads/category/'.$category->image) }}"
                                         class="h-full w-full rounded-[16px] object-cover transition-all duration-700 ease-in-out group-hover:scale-125"
-                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                        style="position: absolute; inset: 0; box-sizing: border-box; padding: 0; border: medium none; margin: auto; display: block; width: 0; height: 0; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
                                         sizes="100vw">
                                 </span>
                             </div>
@@ -121,7 +117,7 @@
                                 <div></div>
                             </div>
                             <span class="text-xs font-semibold text-primary">
-                                @php $category = \App\Models\Category::where('id', 1)->first(); @endphp
+                                @php $category = \App\Models\Category::query()->where('id', 1)->first(); @endphp
                                 @if ($category)
                                     <a href="{{ url('category/'.$category->slug) }}" class="text-xs font-semibold text-primary">មើលទាំងអស់</a>
                                 @endif
@@ -138,7 +134,7 @@
                 <div class="relative flex h-auto w-full select-none py-[20px]"
                      style="transform: translate3d(0px, 0px, 0px);">
 
-                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 1)->get(); @endphp
+                    @php $posts = \App\Models\Post::query()->where('status', 1)->where('category_id', 1)->get(); @endphp
                     @if(count($posts) > 0)
                         @foreach($posts as $post)
                             <div
@@ -148,11 +144,11 @@
                                         <div
                                             class="aspect-w-1 aspect-h-1 absolute h-full w-full transform bg-cover bg-center transition-all duration-700 ease-in-out hover:scale-125">
                                             <span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0 none; margin: 0; padding: 0; position: absolute; inset: 0;">
                                                 <img
                                                     src="{{ asset('uploads/post/'.$post->image) }}"
                                                     class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                                                    style="position: absolute; inset: 0; box-sizing: border-box; padding: 0; border: medium none; margin: auto; display: block; width: 0; height: 0; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" alt="">
                                             </span>
                                         </div>
                                     </a>
@@ -222,7 +218,7 @@
                                 <div></div>
                             </div>
                             <span class="text-xs font-semibold text-primary">
-                                @php $category = \App\Models\Category::where('id', 2)->first(); @endphp
+                                @php $category = \App\Models\Category::query()->where('id', 2)->first(); @endphp
                                 @if ($category)
                                     <a href="{{ url('category/'.$category->slug) }}" class="text-xs font-semibold text-primary">មើលទាំងអស់</a>
                                 @endif
@@ -239,7 +235,7 @@
                 <div class="relative flex h-auto w-full select-none py-[20px]"
                      style="transform: translate3d(0px, 0px, 0px);">
 
-                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 2)->get(); @endphp
+                    @php $posts = \App\Models\Post::query()->where('status', 1)->where('category_id', 2)->get(); @endphp
                     @if(count($posts) > 0)
                         @foreach($posts as $post)
                             <div
@@ -249,11 +245,11 @@
                                         <div
                                             class="aspect-w-1 aspect-h-1 absolute h-full w-full transform bg-cover bg-center transition-all duration-700 ease-in-out hover:scale-125">
                                             <span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0 none; margin: 0; padding: 0; position: absolute; inset: 0;">
                                                 <img
                                                     src="{{ asset('uploads/post/'.$post->image) }}"
                                                     class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                                                    style="position: absolute; inset: 0; box-sizing: border-box; padding: 0; border: medium none; margin: auto; display: block; width: 0; height: 0; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" alt="">
                                             </span>
                                         </div>
                                     </a>
@@ -323,7 +319,7 @@
                                 <div></div>
                             </div>
                             <span class="text-xs font-semibold text-primary">
-                                @php $category = \App\Models\Category::where('id', 3)->first(); @endphp
+                                @php $category = \App\Models\Category::query()->where('id', 3)->first(); @endphp
                                 @if ($category)
                                     <a href="{{ url('category/'.$category->slug) }}" class="text-xs font-semibold text-primary">មើលទាំងអស់</a>
                                 @endif
@@ -340,7 +336,7 @@
                 <div class="relative flex h-auto w-full select-none py-[20px]"
                      style="transform: translate3d(0px, 0px, 0px);">
 
-                    @php $posts = \App\Models\Post::where('status', 1)->where('category_id', 3)->get(); @endphp
+                    @php $posts = \App\Models\Post::query()->where('status', 1)->where('category_id', 3)->get(); @endphp
                     @if(count($posts) > 0)
                         @foreach($posts as $post)
                             <div
@@ -350,11 +346,11 @@
                                         <div
                                             class="aspect-w-1 aspect-h-1 absolute h-full w-full transform bg-cover bg-center transition-all duration-700 ease-in-out hover:scale-125">
                                             <span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0 none; margin: 0; padding: 0; position: absolute; inset: 0;">
                                                 <img
                                                     src="{{ asset('uploads/post/'.$post->image) }}"
                                                     class="image z-10 h-[250px] w-full rounded-[16px] object-cover"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                                                    style="position: absolute; inset: 0; box-sizing: border-box; padding: 0; border: medium none; margin: auto; display: block; width: 0; height: 0; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" alt="">
                                             </span>
                                         </div>
                                     </a>

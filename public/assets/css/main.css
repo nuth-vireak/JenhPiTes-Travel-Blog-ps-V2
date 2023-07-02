@@ -7,6 +7,11 @@ html {
 svg {
     display: block;
 }
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
 @font-face {
     font-family: "khmer";
     src: url("../fonts/Battambang-Regular.ttf") format("truetype");

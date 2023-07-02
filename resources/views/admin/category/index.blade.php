@@ -30,10 +30,10 @@
 
         <div class=" mt-4">
             <div class="d-flex justify-between items-center mb-4">
-                <div class="text-2xl font-semibold mt-4 mb-4">បង្កើតខេត្ត-ក្រុងថ្មី</div>
+                <div class="text-2xl font-semibold mt-4 mb-4">មើលខេត្ត-ក្រុងទាំងអស់</div>
                 <a href="{{ url('admin/add-category') }}" class="btn btn-primary float-end">
                     <i class="fas fa-plus"></i>
-                    បង្កើតថ្មី
+                    បង្កើតខេត្ត-ក្រុងថ្មី
                 </a>
             </div>
 
@@ -45,12 +45,30 @@
                 <table id="dataTable" class="table table-bordered">
                     <thead>
                     <tr class="align-baseline">
-                        <th>លេខរៀង</th>
-                        <th>ឈ្មោះខេត្ត-ក្រុង</th>
-                        <th>រូបភាព</th>
-                        <th>ស្ថានភាព</th>
-                        <th>កែប្រែ</th>
-                        <th>លុប</th>
+                        <th>
+                            <i class="fas fa-list-ol mr-1"></i>
+                            លេខរៀង
+                        </th>
+                        <th>
+                            <i class="fas fa-list-alt mr-1"></i>
+                            ឈ្មោះខេត្ត-ក្រុង
+                        </th>
+                        <th>
+                            <i class="fas fa-image mr-1"></i>
+                            រូបភាព
+                        </th>
+                        <th>
+                            <i class="fas fa-info-circle mr-1"></i>
+                            ស្ថានភាព
+                        </th>
+                        <th>
+                            <i class="fas fa-edit mr-1"></i>
+                            កែប្រែ
+                        </th>
+                        <th>
+                            <i class="fas fa-trash-alt mr-1"></i>
+                            លុប
+                        </th>
                     </tr>
                     </thead>
                     <tbody>

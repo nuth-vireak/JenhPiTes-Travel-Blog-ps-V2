@@ -23,12 +23,12 @@ class CommentController extends Controller
                 return redirect()->back()->with('message', 'Please enter comment.');
             }
 
-            $post = Post::where('slug', $request->post_slug)->where('status', 1)->first();
+            $post = Post::where('slug', $request->input('post_slug'))->where('status', 1)->first();
             if ($post) {
                 Comment::create([
                     'post_id' => $post->id,
                     'user_id' => Auth::user()->id,
-                    'comment_body' => $request->comment_body,
+                    'comment_body' => $request->input('comment_body'),
                 ]);
                 return redirect()->back()->with('message', 'Comment added successfully.');
             } else {
@@ -42,7 +42,7 @@ class CommentController extends Controller
     public function destroy(Request $request)
     {
         if (Auth::check()) {
-            $comment = Comment::where('id', $request->comment_id)->where('user_id', Auth::user()->id)->first();
+            $comment = Comment::where('id', $request->input('comment_id'))->where('user_id', Auth::user()->id)->first();
 
             if ($comment) {
                 $comment->delete();

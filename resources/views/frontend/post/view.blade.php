@@ -1,7 +1,3 @@
-<!-- MDB -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
-<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-
 @extends('layouts.app')
 
 @section('title', "$post->meta_title")
@@ -14,10 +10,10 @@
         <div class="relative h-[400px] w-full">
             <div class="absolute top-0 z-10 h-[400px] w-full items-center justify-center text-center">
             <span
-                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0 none; margin: 0; padding: 0; position: absolute; inset: 0;">
                 <img src="{{ asset('uploads/category/'.$category->image) }}"
                      alt="" class="z-10 h-[400px] w-full rounded-bl-[60px] object-cover"
-                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">0
+                     style="position: absolute; inset: 0; box-sizing: border-box; padding: 0; border: medium none; margin: auto; display: block; width: 0; height: 0; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">0
             </span>
                 <div
                     class="absolute bottom-[0px] right-0 z-10 h-[400px] w-full rounded-bl-[60px] bg-gradient-to-t from-[#101827]"></div>
@@ -34,7 +30,11 @@
         </div>
 
         <div class="relative h-[60px] w-full bg-white"></div>
-        <span class="text-xl font-semibold mb-3" style="margin-left: 5px;">អត្តបទ</span>
+        <span class="text-xl font-semibold mb-3" style="margin-left: 5px;">
+            <i class="fa fa-align-left"></i>
+            អត្តបទ
+        </span>
+
         <div class="max-w-screen-lg mt-[20px]">
             <div class="text-gray-500" style="margin-left: 5px; font-size: 17px;">
                 {!! $post->description !!}
@@ -52,33 +52,46 @@
             @endif
 
             <div class="card card-body">
-                <h6 class="card-title">បញ្ចេញមតិរបស់អ្នក</h6>
+                <div class="card-title font-semibold mb-2">
+                    <i class="fa fa-comments"></i>
+                    បញ្ចេញមតិរបស់អ្នក
+                </div>
                 <form action="{{ url('comments') }}" method="POST">
                     @csrf
                     <input type="text" value="{{ $post->slug }}" name="post_slug" hidden>
-                    <textarea name="comment_body" class="form-control" rows="3" required></textarea>
-                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                    <textarea name="comment_body" class="form-control font-semibold" rows="3" required></textarea>
+                    <button type="submit" class="btn btn-primary mt-3 float-end">
+                        <i class="fa fa-paper-plane"></i>
+                        បញ្ចូលមតិ
+                    </button>
                 </form>
             </div>
 
             @forelse($post->comments as $comment)
                 <div class="comment-container card card-body shadow-sm mt-3">
                     <div class="detail-area">
-                        <h6 class="user-name mb-1">
+                        <div class="user-name mb-1 font-semibold">
+                            <i class="fa fa-user"></i>
                             @if ($comment->user)
                                 {{ $comment->user->name }}
                             @endif
                             <small
-                                class="ms-3 text-primary">{!! $comment->created_at->diffForHumans() !!}</small>
-                        </h6>
-                        <p class="user-comment mb-1">
+                                class="ms-3 text-primary float-end">
+                                <i class="fa fa-clock"></i>
+                                {!! $comment->created_at->diffForHumans() !!}
+                            </small>
+                        </div>
+                        <p class="user-comment mb-1 mt-3">
                             {!!  $comment->comment_body !!}
                         </p>
                     </div>
 
                     @if(auth()->check() && auth()->user()->id == $comment->user_id)
                         <div>
-                            <button type="button" value="{{ $comment->id }}" class="deleteComment btn btn-sm btn-danger">លុបចេញ</button>
+                            <button type="button" value="{{ $comment->id }}" class="deleteComment btn btn-sm btn-danger float-end">
+                                <i class="fa fa-trash"></i>
+                                លុបចេញ
+                            </button>
                         </div>
                     @endif
 
@@ -86,7 +99,10 @@
         </div>
 
         @empty
-            <h6>មិនមានការបញ្ចេញមតិ</h6>
+            <div class="font-semibold mt-4 text-center text-danger">
+                <i class="fa fa-exclamation-triangle"></i>
+                មិនមានការបញ្ចេញមតិ
+            </div>
         @endforelse
 
     </main>
