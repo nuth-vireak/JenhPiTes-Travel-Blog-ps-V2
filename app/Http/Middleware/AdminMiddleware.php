@@ -24,11 +24,11 @@ class AdminMiddleware
                 return $next($request);
             }
             else {
-                return redirect('/home')->with('status', 'You are not authorized to access this page.');
+                return redirect('/home')->with('status', 'អ្នកមិនមានសិទ្ធិសម្រាប់ចូលទៅកាន់ទំព័រនេះទេ');
             }
         }
         else {
-            return redirect('/login')->with('status', 'Please login first.');
+            return redirect('/login')->with('status', 'សូមចូលទៅកាន់គណនីរបស់អ្នកជាមុនសិន');
         }
     }
 }

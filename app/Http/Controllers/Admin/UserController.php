@@ -27,9 +27,9 @@ class UserController extends Controller
         if ($user) {
             $user->role_as = $request->input('role_as');
             $user->update();
-            return redirect('admin/users')->with('message', 'User updated successfully');
+            return redirect('admin/users')->with('message', 'អ្នកប្រើប្រាស់ត្រូវបានកែប្រែដោយជោគជ័យ');
         } else {
-            return redirect('admin/users')->with('message', 'User not found');
+            return redirect('admin/users')->with('message', 'រកមិនឃើញអ្នកប្រើប្រាស់');
         }
     }
 }
